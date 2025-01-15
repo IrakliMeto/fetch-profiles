@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { Subscription } from 'rxjs';
 
 import { DataService, Profile } from './services/data.service';
 import { CardComponent } from './components/card/card.component';
-import { CommonModule, JsonPipe } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 
 @Component({
@@ -42,5 +42,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.dataSubscription.unsubscribe();
+  }
+
+  onDeleteCard(cardId: string) {
+    this.data = this.data.filter(({ id }) => id !== cardId);
   }
 }

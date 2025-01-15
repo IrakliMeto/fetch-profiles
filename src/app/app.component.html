@@ -1,4 +1,4 @@
-<app-header> </app-header>
+<app-header></app-header>
 
 <main class="profiles container-xxl py-3">
   <div class="profiles__title-box">
@@ -23,9 +23,11 @@
   <div class="cards-wrapper">
     <app-card
       *ngFor="let card of data"
+      [id]="card.id"
       [fullName]="card.fullName"
       [age]="card.age"
       [imageSrc]="card.imageSrc"
+      (deleteCard)="onDeleteCard($event)"
     ></app-card>
   </div>
 </ng-template>
