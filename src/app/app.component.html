@@ -1,0 +1,31 @@
+<app-header> </app-header>
+
+<main class="profiles container-xxl py-3">
+  <div class="profiles__title-box">
+    <h3 class="profiles__title">Profiles</h3>
+    <div class="profiles__buttons-parent">
+      <button class="profiles__button">Add new</button>
+      <button
+        (click)="sortByAge()"
+        class="profiles__button profiles__button--sort"
+      >
+        Sort cards
+      </button>
+    </div>
+  </div>
+
+  <ng-container *ngIf="isLoading; else profiles">
+    <h2 class="profiles__loading">Loading</h2>
+  </ng-container>
+</main>
+
+<ng-template #profiles>
+  <div class="cards-wrapper">
+    <app-card
+      *ngFor="let card of data"
+      [fullName]="card.fullName"
+      [age]="card.age"
+      [imageSrc]="card.imageSrc"
+    ></app-card>
+  </div>
+</ng-template>

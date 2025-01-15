@@ -1,0 +1,54 @@
+.modal-content {
+  max-width: 500px;
+  width: calc(100% - 20px);
+  margin: auto;
+  display: flex;
+}
+
+.modal-dialog {
+  display: flex;
+  min-height: 100vh;
+}
+
+.modal-title {
+  font-size: 18px;
+  color: black;
+  font-weight: 600;
+}
+
+.modal-body {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.modal__btn-parent {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 20px;
+  padding: 20px 10px;
+}
+
+.modal__remove-btn {
+  background: red;
+  padding: 5px 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  height: 36px;
+}
+
+.modal__cancel-btn {
+  background: gray;
+  padding: 5px 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  height: 36px;
+}

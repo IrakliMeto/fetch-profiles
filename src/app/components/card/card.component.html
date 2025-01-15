@@ -1,0 +1,34 @@
+<div class="card">
+  <img class="card__image" src="{{ imageSrc }}" alt="{{ imageSrc }}" />
+  <div class="card__content">
+    <div class="card__box">
+      <input
+        maxlength="20"
+        class="card__title"
+        type="text"
+        placeholder="{{ fullName }}"
+        [readonly]="!isEdit"
+      />
+      <div class="card__input-parent">
+        <input
+          maxlength="3"
+          class="card__age"
+          [ngClass]="{ 'card__age--left': isEdit }"
+          placeholder="{{ age }}"
+          type="text"
+          [readonly]="!isEdit"
+        />
+        <span *ngIf="!isEdit"> y.o </span>
+      </div>
+    </div>
+
+    <div class="card__box">
+      <button class="card__remove" (click)="remove()">
+        {{ removeButtonText }}
+      </button>
+      <button (click)="toggleEdit()" class="card__edit">
+        {{ editButtonText }}
+      </button>
+    </div>
+  </div>
+</div>

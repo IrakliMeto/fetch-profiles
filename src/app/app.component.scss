@@ -1,0 +1,98 @@
+.profiles {
+  &__title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 800;
+    color: black;
+    opacity: 0.8;
+  }
+
+  &__buttons-parent {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__button {
+    outline: none;
+    border: none;
+    padding: 8px 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background: blue;
+    transition: all 0.2s;
+
+    &--sort {
+      background: #28a745;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    font-size: 32px;
+    color: #ff6600;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite;
+
+    &::after {
+      content: '...';
+      display: inline-block;
+      width: 0;
+      overflow: hidden;
+      animation: dots 1.5s steps(3, end) infinite;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes dots {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: 14px;
+  }
+  66% {
+    width: 28px;
+  }
+  100% {
+    width: 42px;
+  }
+}
+
+.cards-wrapper {
+  display: grid;
+  gap: 15px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
