@@ -11,12 +11,11 @@
       />
       <div class="card__input-parent">
         <input
-          maxlength="3"
           class="card__age"
-          [ngClass]="{ 'card__age--left': isEdit }"
-          placeholder="{{ age }}"
           type="text"
+          placeholder="{{ age }}"
           [readonly]="!isEdit"
+          (input)="validateNumber($event)"
         />
         <span *ngIf="!isEdit"> y.o </span>
       </div>
